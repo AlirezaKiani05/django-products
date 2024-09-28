@@ -28,6 +28,11 @@ class Product(models.Model):
     updated_time = models.DateTimeField(_('update'), auto_now=True)
     categories = models.ManyToManyField(
         'Category', verbose_name=_('categories'), blank=True)
+    class Meta:
+        db_table='product'
+        verbose_name=_('product')
+        verbose_name_plural=_('products')
+        
 
 
 class File(models.Model):
@@ -38,3 +43,9 @@ class File(models.Model):
     is_enable = models.BooleanField(default=True)
     created_time = models.DateTimeField(auto_now_add=True)
     updated_time = models.DateTimeField(auto_now=True)
+    class Meta:
+        db_table='file'
+        verbose_name=_('file')
+        verbose_name_plural=_('files')
+        
+       

@@ -42,6 +42,11 @@ class Migration(migrations.Migration):
                 ('updated_time', models.DateTimeField(auto_now=True, verbose_name='update')),
                 ('categories', models.ManyToManyField(blank=True, to='products.category', verbose_name='categories')),
             ],
+            options={
+                'verbose_name': 'product',
+                'verbose_name_plural': 'products',
+                'db_table': 'products',
+            },
         ),
         migrations.CreateModel(
             name='File',
@@ -54,5 +59,10 @@ class Migration(migrations.Migration):
                 ('updated_time', models.DateTimeField(auto_now=True)),
                 ('products', models.ManyToManyField(blank=True, to='products.product', verbose_name='products')),
             ],
+            options={
+                'verbose_name': 'file',
+                'verbose_name_plural': 'files',
+                'db_table': 'files',
+            },
         ),
     ]
